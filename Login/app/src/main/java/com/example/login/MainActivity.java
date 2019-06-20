@@ -1,5 +1,6 @@
 package com.example.login;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, telaMenu.class); //SecondActivity será a pagina que abrirá ao logar
                                                                                 // pra adicionar uma nova activity, clicar em com.example.login -> new -> Activity -> empty
             startActivity(intent);
+        }
+        else{
+            System.out.println("Usuário não cadastrado");
+            AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+            alerta.setTitle("Aviso:");
+            alerta.setMessage("Há campos inválidos ou em branco.");
+            alerta.setNeutralButton("Ok.", null);
+            alerta.show();
         }
     }
 
